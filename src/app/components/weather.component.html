@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2> {{cityName}}</h2>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!cityName">
+    <div class="col-md-12">
+      No City is selected.
+    </div>
+  </div>
+
+  <div class="row" *ngIf="cityName">
+    <div class="col-md-12">
+      <table>
+        <tr *ngFor="let w of myCityWeather">
+          <td><img src="http://openweathermap.org/img/w/{{w.icon}}.png" alt=""></td>
+          <td>{{w.main}}</td>
+        </tr>
+      </table>
+      <p>Temperature: {{weather.temp}}</p>
+      <p>Humidity: {{weather.humidity}}</p>
+    </div>
+  </div>
+
+</div>
